@@ -1,0 +1,22 @@
+{
+  "name": "js-redis-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuvishu/node-js-redis-docker.git"
+  },
+  "author": "shuvishu",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^2.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/shuvishu/node-js-redis-docker/issues"
+  },
+  "homepage": "https://github.com/shuvishu/node-js-redis-docker#readme"
+}
