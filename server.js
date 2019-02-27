@@ -6,12 +6,12 @@ http.createServer(function (req, res) {
 	let paresedUrl = url.parse(req.url, true);
 	let requestQuery = paresedUrl.query;
 	let requestPath = paresedUrl.path;
-	if(Object.keys(requestQuery).length == 1){
+	if(Object.keys(requestQuery).length == 1){ //part handles Set for redis
 		let key = Object.keys(requestQuery);
 		handleRedisSet(requestQuery);
 		res.writeHead(200, {'Content-Type': 'text/plain'});
   		res.end(`Value for ${key[0]} has been set to ${requestQuery[key[0]]}`);
-	}else if(requestPath.split('/').length == 3 && requestPath.split('/')[1] == "get"){
+	}else if(requestPath.split('/').length == 3 && requestPath.split('/')[1] == "get"){ //part handles Query from redis
 		redis.redis.get(requestPath.split('/')[2], function (err, result) {
 		res.writeHead(200, {'Content-Type': 'text/plain'})
 			if(err){

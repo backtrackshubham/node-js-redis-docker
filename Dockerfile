@@ -16,5 +16,7 @@ WORKDIR /demo-app
 #Installing node_modules
 RUN npm install
 
+EXPOSE 1234
+
 #Deploying App With redis
 CMD ["sh", "-c", "redis-server > /dev/null 2>&1 & node server.js"]
